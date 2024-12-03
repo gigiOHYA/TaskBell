@@ -1,24 +1,78 @@
+/* General Body Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Baloo 2', sans-serif;  /* Using Baloo for a rounder, playful font */
+    background-color: #ffebf2; /* Light pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Center the container */
+.container {
     text-align: center;
-    padding: 20px;
-  }
-  
-  h1 {
-    color: #4CAF50;
-  }
-  
-  label, input, button {
-    margin: 10px;
-    padding: 5px;
-  }
-  
-  input[type="range"] {
-    width: 200px;
-  }
-  
-  #next-alarm {
-    margin-top: 20px;
-    font-size: 1.2em;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.title {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for the title for a cleaner look */
+    font-size: 3rem; /* Increase title size */
+    color: #ff6b81;
+    margin-bottom: 30px;
+}
+
+/* Styling for the settings */
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Increase gap between settings */
+    margin-bottom: 30px;
+}
+
+.bell-setting {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Increase gap between settings */
+    align-items: center;
+    font-size: 1.5rem; /* Increase font size for settings */
+}
+
+.bell-setting label {
+    font-weight: bold;
+}
+
+/* Styling for action buttons */
+.actions button {
+    font-family: 'Baloo 2', sans-serif; /* Use Baloo for buttons */
+    font-size: 1.5rem; /* Increase font size for buttons */
+    padding: 15px 30px; /* Increase button padding */
+    margin: 15px;
+    border: none;
+    border-radius: 30px; /* More rounded buttons */
+    background-color: #ff6b81;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+    background-color: #ff4466;
+}
+
+/* Styling for status display */
+.status h2 {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for headings */
+    font-size: 2rem; /* Increase font size for headings */
+    color: #ff6b81;
+}
+
+.status p {
+    font-family: 'Baloo 2', sans-serif; /* Use Baloo for paragraph text */
+    font-size: 1.5rem; /* Increase font size for paragraphs */
     color: #333;
-  }
+}
