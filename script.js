@@ -36,7 +36,7 @@ function playBellSound(bell) {
     if (currentAudio) {
         currentAudio.pause(); // Pause any currently playing sound
     }
-    currentAudio = new Audio(`sounds/${bell}`);
+    currentAudio = new Audio(`/sounds/${bell}`);
     currentAudio.play();
 }
 
