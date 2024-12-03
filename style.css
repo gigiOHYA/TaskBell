@@ -46,7 +46,7 @@ body {
 
 .bell-setting label {
     font-weight: bold;
-    min-width: 100px; /* Ensure label has enough space */
+    min-width: 120px; /* Ensure label has enough space */
     text-align: left;
 }
 
@@ -114,15 +114,16 @@ body {
     }
 
     .bell-setting {
-        gap: 10px; /* Reduce gap on mobile for better fit */
+        gap: 8px; /* Reduce gap on mobile for better fit */
+        justify-content: flex-start; /* Align items to start */
     }
 
     .bell-setting label {
-        width: 80px; /* Adjust label width on mobile */
+        width: 100px; /* Adjust label width on mobile */
     }
 
     .bell-setting select,
     .bell-setting input[type="number"] {
-        width: 60px; /* Reduce width for input/select on mobile */
+        width: 80px; /* Slightly reduce width for input/select on mobile */
     }
 }
