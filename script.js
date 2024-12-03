@@ -54,7 +54,7 @@ function cycleAlarm() {
         playBellSound(isClassTime ? classBell : breakBell);
 
         // Update the status (Class or Break) and the time remaining
-        updateStatus(isClassTime ? "Class" : "Break", duration);
+        updateStatus(isClassTime ? "上課中" : "下課中", duration);
     }, (classDuration + breakDuration) * 60 * 1000); // Cycle every class + break duration
 }
 
@@ -73,8 +73,8 @@ function startCountdown(seconds) {
 
 function updateStatus(status, duration) {
     // Update the current status (Class or Break) and the time remaining for the next bell
-    document.getElementById("currentStatus").innerText = `Currently: ${status}`;
-    document.getElementById("nextBellTime").innerText = `Next bell in: ${duration}:00`;
+    document.getElementById("currentStatus").innerText = `${status}`;
+    document.getElementById("nextBellTime").innerText = `下一次鐘聲在: ${duration}:00`;
 }
 
 function stopAlarm() {
@@ -88,7 +88,7 @@ function stopAlarm() {
         currentAudio.pause(); // Stop the current sound
         currentAudio = null;
     }
-    updateStatus("Stopped", 0); // Update the status to "Stopped"
+    updateStatus("無設定", 0); // Update the status to "Stopped"
 }
 
 function stopSound() {

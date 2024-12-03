@@ -9,45 +9,45 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="title">School Bell Timer</h1>
+        <h1 class="title">上課鐘工作法</h1>
         
         <div class="settings">
             <!-- Class Bell and Time -->
             <div class="bell-setting">
-                <label for="classBell">Set Class Bell:</label>
+                <label for="classBell">上課鐘聲</label>
                 <select id="classBell">
-                    <option value="bell1.mp3">Bell 1</option>
-                    <option value="bell2.mp3">Bell 2</option>
-                    <option value="bell3.mp3">Bell 3</option>
+                    <option value="bell1.mp3">傳統鐘聲</option>
+                    <option value="bell2.mp3">念故鄉</option>
+                    <option value="bell3.mp3">孤挺花</option>
                 </select>
-                <label for="classTime">Class Time (mins):</label>
+                <label for="classTime">上課時間 (分)</label>
                 <input type="number" id="classTime" value="40">
             </div>
 
             <!-- Break Bell and Time -->
             <div class="bell-setting">
-                <label for="breakBell">Set Break Bell:</label>
+                <label for="breakBell">下課鐘聲</label>
                 <select id="breakBell">
-                    <option value="bell1.mp3">Bell 1</option>
-                    <option value="bell2.mp3">Bell 2</option>
-                    <option value="bell3.mp3">Bell 3</option>
+                    <option value="bell1.mp3">傳統鐘聲</option>
+                    <option value="bell2.mp3">念故鄉</option>
+                    <option value="bell3.mp3">孤挺花</option>
                 </select>
-                <label for="breakTime">Break Time (mins):</label>
+                <label for="breakTime">下課時間 (分):</label>
                 <input type="number" id="breakTime" value="15">
             </div>
         </div>
 
         <!-- Action Buttons -->
         <div class="actions">
-            <button id="startAlarm" onclick="startAlarm()">Set Alarm</button>
-            <button id="stopAlarm" onclick="stopAlarm()" style="display: none;">Stop Alarm</button>
-            <button id="stopSound" onclick="stopSound()" style="display: none;">Stop Sound</button>
+            <button id="startAlarm" onclick="startAlarm()">開始鐘聲設定</button>
+            <button id="stopAlarm" onclick="stopAlarm()" style="display: none;">停止鐘聲設定</button>
+            <button id="stopSound" onclick="stopSound()" style="display: none;">關閉音效</button>
         </div>
 
         <!-- Status Display -->
         <div class="status">
-            <h2 id="currentStatus">Currently: Not Started</h2>
-            <p id="nextBellTime">Next bell in: --:--</p>
+            <h2 id="currentStatus">尚未設定</h2>
+            <p id="nextBellTime">下次鐘聲在: --:--</p>
         </div>
     </div>
 
