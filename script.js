@@ -30,13 +30,13 @@ function startAlarm() {
     document.getElementById("stopAlarm").style.display = "inline-block"; 
     document.getElementById("stopSound").style.display = "inline-block"; // Show "Stop Sound" button
 }
-
 function playBellSound(bell) {
     console.log(`Playing sound: ${bell}`);
     if (currentAudio) {
         currentAudio.pause(); // Pause any currently playing sound
     }
-    currentAudio = new Audio(`/sounds/${bell}`);
+
+    currentAudio = new Audio("https://raw.githubusercontent.com/gigiOHYA/TaskBell/main/sounds/" + bell);
     currentAudio.play();
 }
 
