@@ -118,6 +118,6 @@ body {
     }
 
     .bell-setting input[type="number"] {
-        width: 40px;
+        width: 20px;
     }
 }
