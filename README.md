@@ -42,7 +42,7 @@ TaskBell is a fun and interactive web app designed to help manage classroom bell
 4. Enjoy the playful and engaging design while managing your classroom bell schedule!
 
 ## Credits:
-- Designed and developed by [Your Name]
+- Designed by Gigi
 - Fonts: "Baloo 2" and "Poppins" from Google Fonts
 - Icons: Provided by Iconify
 
