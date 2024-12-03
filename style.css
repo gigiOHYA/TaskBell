@@ -124,6 +124,6 @@ body {
 
     .bell-setting select,
     .bell-setting input[type="number"] {
-        width: 80px; /* Slightly reduce width for input/select on mobile */
+        width: 100px; /* Slightly reduce width for input/select on mobile */
     }
 }
