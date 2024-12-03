@@ -5,6 +5,7 @@ let classBell = "bell1.mp3";
 let breakBell = "bell1.mp3";
 let classDuration = 40; // Default class duration (minutes)
 let breakDuration = 15; // Default break duration (minutes)
+let countdownID;
 
 function startAlarm() {
     console.log("Set Alarm clicked"); // Debug log to check if the function is triggered
@@ -43,37 +44,40 @@ function playBellSound(bell) {
 function cycleAlarm() {
     let isClassTime = true; // Start with class time
 
+    // 立即啟動倒數計時
+    startCountdown(classDuration * 60);
+    updateStatus("上課中", classDuration);
+    playBellSound(classBell);
+
     intervalID = setInterval(() => {
-        let duration = isClassTime ? classDuration : breakDuration;
-        startCountdown(duration * 60); // Start countdown (in seconds)
-
-        // Toggle between class and break time
         isClassTime = !isClassTime;
+        let duration = isClassTime ? classDuration : breakDuration;
 
-        // Play the corresponding bell sound
-        playBellSound(isClassTime ? classBell : breakBell);
-
-        // Update the status (Class or Break) and the time remaining
+        // 更新狀態與倒數
         updateStatus(isClassTime ? "上課中" : "下課中", duration);
-    }, (classDuration + breakDuration) * 60 * 1000); // Cycle every class + break duration
+        playBellSound(isClassTime ? classBell : breakBell);
+        startCountdown(duration * 60); // 重置倒數計時
+    }, (classDuration + breakDuration) * 60 * 1000);
 }
 
 function startCountdown(seconds) {
-    let countdown = setInterval(() => {
+    clearInterval(countdownID); // 清除之前的倒數計時器
+
+    countdownID = setInterval(() => {
         if (seconds <= 0) {
-            clearInterval(countdown); // Stop the countdown when time is up
+            clearInterval(countdownID); // 停止倒數計時
         } else {
             seconds--;
             let mins = Math.floor(seconds / 60);
             let secs = seconds % 60;
-            document.getElementById("nextBellTime").innerText = `${mins}:${secs < 10 ? '0' + secs : secs}`;
+            document.getElementById("nextBellTime").innerText = `下一次鐘聲在: ${mins}:${secs < 10 ? '0' + secs : secs}`;
         }
     }, 1000);
 }
 
+
 function updateStatus(status, duration) {
-    // Update the current status (Class or Break) and the time remaining for the next bell
-    document.getElementById("currentStatus").innerText = `${status}`;
+    document.getElementById("currentStatus").innerText = status;
     document.getElementById("nextBellTime").innerText = `下一次鐘聲在: ${duration}:00`;
 }
 
