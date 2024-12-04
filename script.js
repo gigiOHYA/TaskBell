@@ -42,22 +42,18 @@ function playBellSound(bell) {
 }
 
 function cycleAlarm() {
-    let isClassTime = true; // Start with class time
+    let isClassTime = true;
 
-    // 立即啟動倒數計時
-    startCountdown(classDuration * 60);
-    updateStatus("上課中", classDuration);
-    playBellSound(classBell);
-
-    intervalID = setInterval(() => {
-        isClassTime = !isClassTime;
+    const switchBell = () => {
         let duration = isClassTime ? classDuration : breakDuration;
-
-        // 更新狀態與倒數
         updateStatus(isClassTime ? "上課中" : "下課中", duration);
         playBellSound(isClassTime ? classBell : breakBell);
         startCountdown(duration * 60); // 重置倒數計時
-    }, (classDuration + breakDuration) * 60 * 1000);
+        isClassTime = !isClassTime; // 下次進行切換
+    };
+
+    switchBell(); // 立即進行首次狀態更新和鈴聲播放
+    intervalID = setInterval(switchBell, classDuration * 60 * 1000 + breakDuration * 60 * 1000);
 }
 
 function startCountdown(seconds) {
@@ -74,6 +70,7 @@ function startCountdown(seconds) {
         }
     }, 1000);
 }
+
 
 
 function updateStatus(status, duration) {
